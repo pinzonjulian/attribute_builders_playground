@@ -1,0 +1,24 @@
+<div>
+<h1>Default</h1>
+<p>With open-pros normalize styling</p>
+<%= form_with model: User.new do |form| %>
+  <div class="stack">
+    <%= form.text_field :name, required: true %>
+    <%= form.number_field :age, required: true %>
+    <%= form.url_field :website, required: true %>
+    <%= form.password_field :password, required: true %>
+
+    <%= form.label :active, style: "display: flex; justify-content: space-between" do %>
+      Active?
+      <%= form.check_box :active %>
+    <% end %>
+
+    <%= form.label :onboarded, style: "display: flex; justify-content: space-between" do %>
+      Onboarded?
+      <%= form.check_box :onboarded %>
+    <% end %>
+
+    <%= form.button "Submit" %>
+  </div>
+<% end %>
+</div>

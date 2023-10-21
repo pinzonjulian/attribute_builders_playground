@@ -4,6 +4,8 @@
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^7.3.0",
+    "@material/web": "^1.0.1",
+    "@shoelace-style/shoelace": "^2.11.0",
     "esbuild": "^0.19.5"
   },
   "scripts": {

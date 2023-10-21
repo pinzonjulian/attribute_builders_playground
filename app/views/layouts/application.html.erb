@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>FutureLooks</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>future_looks</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.10.0/cdn/themes/light.css" />
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-  </head>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+</head>
 
-  <body>
+<body>
+<div  style="max-inline-size: var(--size-content-3); margin-inline: auto; margin-block-start: var(--size-8);">
+  <nav>
+    <ul>
+      <li><%= link_to "Default", '/' %></li>
+      <li><%= link_to "Material", '/material' %></li>
+      <li><%= link_to "Shoelace", '/shoelace' %></li>
+    </ul>
+  </nav>
+  <main>
     <%= yield %>
-  </body>
+  </main>
+</div>
+</body>
 </html>
