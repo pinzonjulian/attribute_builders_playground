@@ -6,7 +6,7 @@ image: pinzonjulian/future-looks
 
 # Deploy to these servers.
 servers:
-  - SERVER_IP_ADDRESS
+  - 170.64.154.22
 
 # Credentials for your image host.
 registry:
