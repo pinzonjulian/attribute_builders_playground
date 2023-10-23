@@ -1,19 +1,23 @@
-<h1>Material Web Components</h1>
-<%= form_with model: User.new, builder: MaterialFormBuilder do |form| %>
-  <div class="stack">
-    <%= form.text_field :name, required: true, label: "Name" %>
-    <%= form.number_field :age, required: true, label: "Age" %>
-    <%= form.url_field :website, required: true, label: "Website" %>
-    <%= form.password_field :password, required: true, label: "Password" %>
-    <label for="user_active" style="display: flex; justify-content: space-between">
-      Active?
-      <%= form.switch :active %>
-    </label>
+<div class="stack">
 
-    <label for="user_onboarded" style="display: flex; justify-content: space-between">
-      Onboarded?
-      <%= form.check_box :onboarded %>
-    </label>
-    <%= form.button "Submit" %>
-  </div>
-<% end %>
+
+  <h1>Material Web Components</h1>
+  <%= form_with model: User.new, builder: MaterialFormBuilder do |form| %>
+    <div class="stack">
+      <%= form.text_field :name, required: true, label: "Name" %>
+      <%= form.number_field :age, required: true, label: "Age" %>
+      <%= form.url_field :website, required: true, label: "Website" %>
+      <%= form.password_field :password, required: true, label: "Password" %>
+      <label for="user_active" style="display: flex; justify-content: space-between">
+        Active?
+        <%= form.switch :active %>
+      </label>
+
+      <label for="user_onboarded" style="display: flex; justify-content: space-between">
+        Onboarded?
+        <%= form.check_box :onboarded %>
+      </label>
+      <%= form.button "Submit" %>
+    </div>
+  <% end %>
+</div>

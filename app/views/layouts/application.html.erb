@@ -12,15 +12,18 @@
 </head>
 
 <body>
-<div  style="max-inline-size: var(--size-content-3); margin-inline: auto; margin-block-start: var(--size-8);">
-  <nav>
-    <ul>
-      <li><%= link_to "Default", '/' %></li>
-      <li><%= link_to "Material", '/material' %></li>
-      <li><%= link_to "Shoelace", '/shoelace' %></li>
-    </ul>
-  </nav>
-  <main>
+<div class="stack">
+  <div class="center" style="--measure: var(--size-content-10)">
+    <nav class="cluster">
+      <ul class="cluster list-style-type:none padding-inline-start:0">
+        <li class="padding-inline-start:0"><%= link_to "Default", '/' %></li>
+        <li class="padding-inline-start:0"><%= link_to "Material", '/material' %></li>
+        <li class="padding-inline-start:0"><%= link_to "Shoelace", '/shoelace' %></li>
+      </ul>
+    </nav>
+  </div>
+  <main class="center"
+        style="--measure: var(--size-content-10)">
     <%= yield %>
   </main>
 </div>
