@@ -1,3 +1,4 @@
+
 class MaterialFormBuilder < ApplicationFormBuilder
   def text_field(method, options = {})
     attribute_builder = text_field_attribute_builder(method, options)

@@ -2,7 +2,7 @@
   <%= render 'nav' %>
   <div class="highlight overflow-x-scroll p-4">
     <pre>
-      <%== syntax_highlighter(session[:to_print].to_json, "json") %>
+      <%== syntax_highlighter(JSON.pretty_generate(session[:to_print]), "json") %>
     </pre>
   </div>
 <% end %>
