@@ -68,3 +68,6 @@ group :test do
 end
 
 gem "actionview_attribute_builders"
+gem "tailwindcss-rails", "~> 2.0"
+
+gem "rouge", "~> 4.1"

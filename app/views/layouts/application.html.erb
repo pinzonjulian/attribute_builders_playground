@@ -6,24 +6,24 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.10.0/cdn/themes/light.css" />
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
 </head>
 
 <body>
-<div class="stack">
-  <div class="center" style="--measure: var(--size-content-10)">
-    <nav class="cluster">
-      <ul class="cluster list-style-type:none padding-inline-start:0">
+<div class="flex flex-col gap-4">
+  <div class="container mx-auto" style="--measure: var(--size-content-10)">
+    <nav class="flex">
+      <ul class="flex gap-4">
         <li class="padding-inline-start:0"><%= link_to "Default", '/' %></li>
         <li class="padding-inline-start:0"><%= link_to "Material", '/material' %></li>
         <li class="padding-inline-start:0"><%= link_to "Shoelace", '/shoelace' %></li>
       </ul>
     </nav>
   </div>
-  <main class="center"
-        style="--measure: var(--size-content-10)">
+  <main class="container mx-auto">
     <%= yield %>
   </main>
 </div>

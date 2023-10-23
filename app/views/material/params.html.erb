@@ -1,0 +1,8 @@
+<%= turbo_frame_tag "code" do %>
+  <%= render 'nav' %>
+  <div class="highlight overflow-x-scroll p-4">
+    <pre>
+      <%== syntax_highlighter(session[:to_print].to_json, "json") %>
+    </pre>
+  </div>
+<% end %>

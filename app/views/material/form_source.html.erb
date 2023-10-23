@@ -1,0 +1,8 @@
+<%= turbo_frame_tag "code" do %>
+  <%= render 'nav' %>
+  <div class="highlight overflow-x-scroll p-4">
+    <pre>
+      <%== syntax_highlighter(render(partial: "form", layout: false), "html") %>
+    </pre>
+  </div>
+<% end %>

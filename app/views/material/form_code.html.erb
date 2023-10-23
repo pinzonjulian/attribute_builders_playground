@@ -1,0 +1,8 @@
+<%= turbo_frame_tag "code" do %>
+  <%= render 'nav' %>
+  <div class="highlight overflow-x-scroll p-4">
+    <pre>
+      <%== syntax_highlighter(File.read(Rails.root.join("app", "views", "material", "_form.html.erb")), "erb").html_safe %>
+    </pre>
+  </div>
+<% end %>
