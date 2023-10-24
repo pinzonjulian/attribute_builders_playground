@@ -2,7 +2,7 @@
 
 <div class="grid grid-cols-4 gap-8 mt-8">
   <div class="col-span-1">
-    <%= render 'form' %>
+    <%= render 'material/form', user: @user %>
   </div>
   <div class="col-span-3">
     <%= turbo_frame_tag "code", src: "material/form_source" %>

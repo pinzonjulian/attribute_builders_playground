@@ -1,11 +1,13 @@
 
-<%= form_with model: User.new, builder: MaterialFormBuilder,
+<%= form_with model: user,
+              builder: MaterialFormBuilder,
+              id: "user_form",
               data: { turbo_frame: "code" } do |form| %>
   <div class="stack">
-    <%= form.text_field :name, required: true, label: "Name" %>
-    <%= form.number_field :age, required: true, label: "Age" %>
-    <%= form.url_field :website, required: true, label: "Website" %>
-    <%= form.password_field :password, required: true, label: "Password" %>
+    <%= form.text_field :name, required: false, icon: { name: "person", position: "trailing" } %>
+    <%= form.number_field :age, required: false %>
+    <%= form.email_field :email, required: false %>
+    <%= form.password_field :password, required: false %>
     <label for="user_active" style="display: flex; justify-content: space-between">
       Active?
       <%= form.switch :active %>

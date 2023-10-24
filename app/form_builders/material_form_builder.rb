@@ -1,52 +1,15 @@
 
 class MaterialFormBuilder < ApplicationFormBuilder
-  def text_field(method, options = {})
-    attribute_builder = text_field_attribute_builder(method, options)
-    html_attributes = attribute_builder.html_attributes
-    @template.content_tag("md-outlined-text-field", nil,  html_attributes.merge!(options))
-  end
 
-  def number_field(method, options = {})
-    attribute_builder = number_field_attribute_builder(method, options)
-    html_attributes = attribute_builder.html_attributes
-    @template.content_tag("md-outlined-text-field", nil,  html_attributes.merge!(options))
-  end
-
-
-  def color_field(method, options = {})
-    attribute_builder = color_field_attribute_builder(method, options)
-    html_attributes = attribute_builder.html_attributes
-    @template.content_tag("md-outlined-text-field", nil,  html_attributes.merge!(options))
-  end
-
-  def email_field(method, options = {})
-    attribute_builder = email_field_attribute_builder(method, options)
-    html_attributes = attribute_builder.html_attributes
-    @template.content_tag("md-outlined-text-field", nil,  html_attributes.merge!(options))
-  end
-
-  def search_field(method, options = {})
-    attribute_builder = search_field_attribute_builder(method, options)
-    html_attributes = attribute_builder.html_attributes
-    @template.content_tag("md-outlined-text-field", nil,  html_attributes.merge!(options))
-  end
-
-  def tel_field(method, options = {})
-    attribute_builder = tel_field_attribute_builder(method, options)
-    html_attributes = attribute_builder.html_attributes
-    @template.content_tag("md-outlined-text-field", nil,  html_attributes.merge!(options))
-  end
-
-  def password_field(method, options = {})
-    attribute_builder = password_field_attribute_builder(method, options)
-    html_attributes = attribute_builder.html_attributes
-    @template.content_tag("md-outlined-text-field", nil,  html_attributes.merge!(options))
-  end
-
-  def url_field(method, options = {})
-    attribute_builder = url_field_attribute_builder(method, options)
-    html_attributes = attribute_builder.html_attributes
-    @template.content_tag("md-outlined-text-field", nil,  html_attributes.merge!(options))
+  text_fields = %i( text_field number_field color_field email_field search_field tel_field password_field url_field )
+  # e.g. Text Field
+  # def text_field(method, options = {})
+  #   build_text_field(method, options, __method__)
+  # end
+  text_fields.each do |name|
+    define_method name do |method, options = {}|
+      build_text_field(method, options, __method__)
+    end
   end
 
   def switch(method, options = { }, checked_value = nil, unchecked_value = nil)
@@ -67,5 +30,26 @@ class MaterialFormBuilder < ApplicationFormBuilder
   def button(value = nil, options = {}, &block)
     super
     @template.content_tag("md-filled-button", value, options)
+  end
+
+  private
+
+  def build_text_field(method, options, method_name)
+    attribute_builder = public_send("#{method_name}_attribute_builder", method, options)
+    html_attributes = attribute_builder.html_attributes
+    html_attributes.merge!(**options, label: method)
+    if object.errors.present?
+      html_attributes.merge!(error: object.valid?, "error-text" => object.errors.where(method).map(&:full_message))
+    end
+
+    @template.content_tag("md-outlined-text-field", html_attributes) do
+      if options[:icon].present?
+        @template.content_tag(
+          "md-icon",
+          options.dig(:icon, :name),
+          { slot: "#{options.dig(:icon, :position)}-icon" }
+        )
+      end
+    end
   end
 end
