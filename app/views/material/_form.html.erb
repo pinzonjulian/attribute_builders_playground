@@ -1,8 +1,7 @@
 
 <%= form_with model: user,
               builder: MaterialFormBuilder,
-              id: "user_form",
-              data: { turbo_frame: "code" } do |form| %>
+              id: "user_form" do |form| %>
   <div class="stack">
     <%= form.text_field :name, required: false, icon: { name: "person", position: "trailing" } %>
     <%= form.number_field :age, required: false %>

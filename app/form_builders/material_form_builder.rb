@@ -38,7 +38,7 @@ class MaterialFormBuilder < ApplicationFormBuilder
     attribute_builder = public_send("#{method_name}_attribute_builder", method, options)
     html_attributes = attribute_builder.html_attributes
     html_attributes.merge!(**options, label: method)
-    if object.errors.present?
+    if object.errors.where(method).present?
       html_attributes.merge!(error: object.valid?, "error-text" => object.errors.where(method).map(&:full_message))
     end
 

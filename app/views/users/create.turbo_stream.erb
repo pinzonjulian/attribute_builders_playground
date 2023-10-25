@@ -1,1 +1,7 @@
-<%= turbo_stream.replace("user_form", partial: "material/form", locals: { user: @user }) %>
+<% if @user.valid? %>
+  <%= turbo_stream.update("json", partial: "material/params") %>
+  <%= turbo_stream.replace("user_form", partial: "material/form", locals: { user: User.new }) %>
+<% else %>
+  <%= turbo_stream.replace("user_form", partial: "material/form", locals: { user: @user }) %>
+  <%= turbo_stream.replace("html", partial: "material/html", locals: { user: @user }) %>
+<% end %>

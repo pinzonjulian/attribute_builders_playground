@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.10.0/cdn/themes/light.css" />
-    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.10.0/cdn/themes/light.css"/>
+  <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
   <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
 
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
@@ -14,19 +14,33 @@
 </head>
 
 <body>
-<div class="flex flex-col gap-4">
-  <div class="container mx-auto" style="--measure: var(--size-content-10)">
-    <nav class="flex">
+
+<div class="md:flex flex-col md:h-screen overflow-y-hidden">
+  <div class="flex-shrink-0 bg-slate-200 text-slate-600 font-bold px-4 py-4">
+    <nav class="flex h-full">
       <ul class="flex gap-4">
-        <li class="padding-inline-start:0"><%= link_to "Default", '/' %></li>
-        <li class="padding-inline-start:0"><%= link_to "Material", '/material' %></li>
-        <li class="padding-inline-start:0"><%= link_to "Shoelace", '/shoelace' %></li>
+        <li ><%= link_to "Default",
+                         '/',
+                         class: class_names(
+                           'hover:text-pink-900',
+                           'text-pink-600'=> current_page?(root_path)) %></li>
+        <li ><%= link_to "Material",
+                         '/material',
+                         class: class_names(
+                           'hover:text-pink-900',
+                           'text-pink-600'=> request.fullpath.include?("material")) %></li>
+        <li ><%= link_to "Shoelace",
+                         '/shoelace',
+                         class: class_names(
+                           'hover:text-pink-900',
+                           'text-pink-600'=> request.fullpath.include?("shoelace")) %></li>
       </ul>
     </nav>
   </div>
-  <main class="container mx-auto">
+  <main class="h-full">
     <%= yield %>
   </main>
 </div>
+
 </body>
 </html>

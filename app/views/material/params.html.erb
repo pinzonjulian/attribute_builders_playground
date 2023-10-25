@@ -1,8 +1,0 @@
-<%= turbo_frame_tag "code" do %>
-  <%= render 'material/nav' %>
-  <div class="highlight overflow-x-scroll p-4">
-    <pre>
-      <%== syntax_highlighter(JSON.pretty_generate(session[:to_print]), "json") %>
-    </pre>
-  </div>
-<% end %>
