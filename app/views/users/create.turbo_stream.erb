@@ -3,5 +3,5 @@
   <%= turbo_stream.replace("user_form", partial: "material/form", locals: { user: User.new }) %>
 <% else %>
   <%= turbo_stream.replace("user_form", partial: "material/form", locals: { user: @user }) %>
-  <%= turbo_stream.replace("html", partial: "material/html", locals: { user: @user }) %>
+  <%= turbo_stream.update("html", partial: "material/html", locals: { user: @user }) %>
 <% end %>
