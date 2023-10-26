@@ -35,11 +35,14 @@ class MaterialFormBuilder < ApplicationFormBuilder
   private
 
   def build_text_field(method, options, method_name)
+    # e.g. text_field_form_builder(method, options)
+    # These methods live in the proposed ActionView::AttributeBuilders gem
+    # and are NOT currently part of Rails. This is the actual proposal!
     attribute_builder = public_send("#{method_name}_attribute_builder", method, options)
     html_attributes = attribute_builder.html_attributes
     html_attributes.merge!(**options, label: method)
     if object.errors.where(method).present?
-      html_attributes.merge!(error: object.valid?, "error-text" => object.errors.where(method).map(&:full_message))
+      html_attributes.merge!(error: object.invalid?, "error-text" => object.errors.where(method).map(&:full_message))
     end
 
     @template.content_tag("md-outlined-text-field", html_attributes) do
