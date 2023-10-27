@@ -1,5 +1,5 @@
 <% if @user.valid? %>
-  <%= turbo_stream.update("json", partial: "material/params") %>
+  <%= turbo_stream.update("json", partial: "general/params") %>
   <%= turbo_stream.replace("user_form", partial: "material/form", locals: { user: User.new }) %>
 <% else %>
   <%= turbo_stream.replace("user_form", partial: "material/form", locals: { user: @user }) %>
