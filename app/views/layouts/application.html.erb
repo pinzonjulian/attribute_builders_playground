@@ -16,24 +16,27 @@
 <body>
 
 <div class="md:flex flex-col md:h-screen overflow-y-hidden">
-  <div class="flex-shrink-0 bg-slate-200 text-slate-600 font-bold px-4 py-4">
+  <div class="flex-shrink-0 bg-stone-800 text-stone-100 font-mono px-4 py-4">
     <nav class="flex h-full">
       <ul class="flex gap-4">
         <li ><%= link_to "Default",
                          '/',
                          class: class_names(
-                           'hover:text-pink-900',
-                           'text-pink-600'=> current_page?(root_path)) %></li>
+                           'border-b-2', 'border-b-transparent', 'pb-1',
+                           'hover:text-teal-200 hover:border-b-teal-300' => !current_page?(root_path),
+                           'text-teal-400 border-b-teal-400' => current_page?(root_path)) %></li>
         <li ><%= link_to "Material",
                          '/material',
                          class: class_names(
-                           'hover:text-pink-900',
-                           'text-pink-600'=> request.fullpath.include?("material")) %></li>
+                           'border-b-2', 'border-b-transparent', 'pb-1',
+                           'hover:text-teal-200 hover:border-b-teal-300' => !request.fullpath.include?("material"),
+                           'text-teal-400 border-b-teal-400' => request.fullpath.include?("material")) %></li>
         <li ><%= link_to "Shoelace",
                          '/shoelace',
                          class: class_names(
-                           'hover:text-pink-900',
-                           'text-pink-600'=> request.fullpath.include?("shoelace")) %></li>
+                           'border-b-2', 'border-b-transparent', 'pb-1',
+                           'hover:text-teal-200 hover:border-b-teal-300' => !request.fullpath.include?("shoelace"),
+                           'text-teal-400 border-b-teal-400' => request.fullpath.include?("shoelace")) %></li>
       </ul>
     </nav>
   </div>
