@@ -61,3 +61,7 @@
 :where(h1, h2, h3, h4, h5, h6) {
     font-size: var(--font-size-4, 1rem);
 }
+
+sl-input[data-invalid]::part(base) {
+    border-color: red;
+}

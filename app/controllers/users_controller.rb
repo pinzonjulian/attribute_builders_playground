@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     @style_type = case request.referrer
                   when /material/
                     "material"
-                  when "shoelace"
+                  when /shoelace/
                     "shoelace"
                   else
                     raise "unsupported"

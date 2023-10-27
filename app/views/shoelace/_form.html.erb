@@ -1,0 +1,21 @@
+
+<%= form_with model: user,
+              builder: ShoelaceFormBuilder,
+              id: "user_form" do |form| %>
+  <div class="stack">
+    <%= form.text_field :name, required: false %>
+    <%= form.number_field :age, required: false %>
+    <%= form.email_field :email, required: false %>
+    <%= form.password_field :password, required: false %>
+    <label for="user_active" style="display: flex; justify-content: space-between">
+      Active?
+      <%= form.switch :active %>
+    </label>
+
+    <label for="user_onboarded" style="display: flex; justify-content: space-between">
+      Onboarded?
+      <%= form.check_box :onboarded %>
+    </label>
+    <%= form.button "Submit" %>
+  </div>
+<% end %>
