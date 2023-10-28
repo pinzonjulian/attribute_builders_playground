@@ -8,34 +8,7 @@
     </div>
   </div>
 
-  <div class="flex flex-col h-full col-span-3 h-full overflow-scroll">
-
-    <div class="bg-stone-100 sm:border-b-4 md:border-r-4 border-stone-200 overflow-scroll h-full"
-         data-controller="tabs"
-         data-tabs-visibility-class="hidden"
-         data-tabs-open-class="border-b-stone-400"
-         data-tabs-closed-class="border-b-transparent"
-         data-tabs-open-value="code">
-      <nav class="flex bg-stone-100 text-stone-700">
-        <button class="px-4 pb-1 pt-3 border-b-transparent border-b-4"
-                data-tabs-target="tab"
-                data-action="tabs#open"
-                data-content="code">Code</button>
-        <button class="px-4 pb-1 pt-3 border-b-transparent border-b-4"
-                data-tabs-target="tab"
-                data-action="tabs#open"
-                data-content="html">HTML</button>
-        <button class="px-4 pb-1 pt-3 border-b-transparent border-b-4"
-                data-tabs-target="tab"
-                data-action="tabs#open"
-                data-content="builder">Builder</button>
-      </nav>
-      <div class="hidden" data-tabs-target="content" id="code"><%= render 'code' %></div>
-      <div class="hidden" data-tabs-target="content" id="html"><%= render 'html' %></div>
-      <div class="hidden" data-tabs-target="content" id="builder"><%= render 'builder' %></div>
-    </div>
-
-  </div>
+  <%= render 'general/content', style_type: "material" %>
   <%= render 'general/params_container' %>
 
 </div>

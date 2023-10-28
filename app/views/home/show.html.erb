@@ -35,7 +35,18 @@
     <h3>Valid forms</h3>
     <p>Fill in the form with valid fields and click submit. You should see the <code>Params</code> section fill up with the params Rails received</p>
 
-    <h4>The <code>User</code>model</h4>
+    <details>
+      <summary>
+        👀Here's what to look for exactly
+      </summary>
+      <h4>For the default Rails implementation</h4>
+      <ul>
+        <li>Sending and invalid form does not present errors by default</li>
+        <li>Rails wraps every field and label with a <code>div</code> with a class <code>field_with_errors</code>. This a configuration that comes from <code>ActionView::Base.field_error_proc</code> and can be overwritten if necessary.</li>
+      </ul>
+    </details>
+
+    <h2>The <code>User</code>model</h2>
     <p>Use this to figure out how to play with the forms</p>
   </div>
   <div class="highlight max-w-[65ch] mx-auto">
