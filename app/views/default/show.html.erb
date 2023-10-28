@@ -1,9 +1,9 @@
 <div class="md:grid grid-cols-7 md:h-full">
 
   <div class="overflow-y-scroll p-8 col-span-2">
-    <h1 class="font-bold text-stone-900 text-2xl font-mono">Shoelace Web Components</h1>
+    <h1 class="font-bold text-stone-900 text-2xl font-mono">Rails Default</h1>
     <div class="mt-4">
-      <%= render 'shoelace/form', user: @user %>
+      <%= render 'default/form', user: @user %>
     </div>
   </div>
 
@@ -24,14 +24,9 @@
                 data-tabs-target="tab"
                 data-action="tabs#open"
                 data-content="html">HTML</button>
-        <button class="px-4 pb-1 pt-3 border-b-transparent border-b-4"
-                data-tabs-target="tab"
-                data-action="tabs#open"
-                data-content="builder">Builder</button>
       </nav>
       <div class="hidden" data-tabs-target="content" id="code"><%= render 'code' %></div>
       <div class="hidden" data-tabs-target="content" id="html"><%= render 'html' %></div>
-      <div class="hidden" data-tabs-target="content" id="builder"><%= render 'builder' %></div>
     </div>
 
   </div>

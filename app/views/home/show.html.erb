@@ -1,0 +1,47 @@
+<div class="container mx-auto px-4 md:px-0 my-8">
+  <div class="text-center">
+    <h1 class="font-bold text-stone-900 text-2xl font-mono">ActionView AttributeBuilders</h1>
+    <p class="text-stone-600 font-bold">Created by Julián Pinzón Eslava</p>
+    <p class="font-bold text-stone-600 text-lg font-mono mt-4">Playground</p>
+  </div>
+
+  <div class="prose mt-8 mx-auto">
+    <p>This website shows the <code>ActionView::AttributeBuilders</code> gem in action.</p>
+
+    <p>Head on over to the project in <%= link_to "Github", "https://github.com/pinzonjulian/actionview_attribute_builders" %> to see the code behind the gem and a more detailed technical explanation of the implementation. If you're interested in the context of <em>why</em> this exists, visit the <%= link_to "Exploring Rails Forms", "http://dev.julianpinzon.com/series/exploring-rails-forms" %> series of articles.</p>
+    <hr>
+    <p>Each link contains one implementation of the gem for a different component library plus a vanilla implementation of th  Rails default using Tailwind CSS.</p>
+    <blockquote>⚠️ This gem is still experimental. This means some things are not finished, polished or may not work entirely</blockquote>
+    <h2>The interface</h2>
+    <p>Each implementation has 2 or 3 tabs:</p>
+    <ul>
+      <li>A form to interact with</li>
+      <li>
+        <span>The code, comprised of:</span>
+        <ul>
+          <li>The <code>erb</code> template used to create the form</li>
+          <li>The rendered <code>HTML</code> by the server</li>
+          <li>The custom <code>FormBuilder</code> used (when applicable)</li>
+        </ul>
+      </li>
+      <li>A <code>params</code> section to show the actual parameters the server receives and their shape</li>
+    </ul>
+
+    <h2>How to use it and what to look for</h2>
+    <blockquote> 👀 Each time you submit a form the <code>HTML</code> tab will change and show the newly rendered markup for the request. Make sure to take a pique!</blockquote>
+    <p>There are two scenarios to play with. Invalid forms and valid ones.</p>
+    <h3>Invalid forms</h3>
+    <p>Simply submit an <strong>empty</strong> form and let Rails do its thing. You should see some change in the presentation of the markup</p>
+    <h3>Valid forms</h3>
+    <p>Fill in the form with valid fields and click submit. You should see the <code>Params</code> section fill up with the params Rails received</p>
+
+    <h4>The <code>User</code>model</h4>
+    <p>Use this to figure out how to play with the forms</p>
+  </div>
+  <div class="highlight max-w-[65ch] mx-auto">
+  <pre class="mt-4 p-4">
+    <%== syntax_highlighter(File.read(Rails.root.join("app", "models", "user.rb")), "ruby").html_safe %>
+  </pre>
+  </div>
+  <div class="prose"></div>
+</div>

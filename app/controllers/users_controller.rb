@@ -7,6 +7,8 @@ class UsersController < ApplicationController
                     "material"
                   when /shoelace/
                     "shoelace"
+                  when /default/
+                    "default"
                   else
                     raise "unsupported"
                   end

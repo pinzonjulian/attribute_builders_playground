@@ -1,0 +1,31 @@
+<%= form_with model: user,
+              id: "user_form" do |form| %>
+  <div class="stack">
+    <div class="stack" style="--space: 0.25rem">
+      <%= form.label :name %>
+      <%= form.text_field :name, class: "form-input" %>
+    </div>
+    <div class="stack" style="--space: 0.25rem">
+      <%= form.label :age %>
+      <%= form.number_field :age, class: "form-input" %>
+    </div>
+    <div class="stack" style="--space: 0.25rem">
+      <%= form.label :email %>
+      <%= form.email_field :email, class: "form-input" %>
+    </div>
+    <div class="stack" style="--space: 0.25rem">
+      <%= form.label :password %>
+      <%= form.password_field :password, class: "form-input" %>
+    </div>
+    <%= form.label :active, class: 'flex justify-between' do %>
+      <span>Active?</span>
+      <%= form.check_box :active %>
+    <% end %>
+
+    <%= form.label :onboarded, class: 'flex justify-between' do %>
+      <span>Onboarded?</span>
+      <%= form.check_box :onboarded %>
+    <% end %>
+    <%= form.button "Submit", class: "bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md shadow-md transition-colors" %>
+  </div>
+<% end %>
