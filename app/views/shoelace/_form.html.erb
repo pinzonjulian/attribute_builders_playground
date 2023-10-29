@@ -3,7 +3,7 @@
               builder: ShoelaceFormBuilder,
               id: "user_form" do |form| %>
   <div class="stack">
-    <%= form.text_field :name, required: false %>
+    <%= form.text_field :name, required: false, icon: { name: "person", position: "prefix" } %>
     <%= form.number_field :age, required: false %>
     <%= form.email_field :email, required: false %>
     <%= form.password_field :password, required: false %>

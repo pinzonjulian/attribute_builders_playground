@@ -44,6 +44,18 @@ class ShoelaceFormBuilder < ApplicationFormBuilder
       html_attributes.merge!("data-invalid": object.invalid?, "help-text" => object.errors.where(method).map(&:full_message))
     end
 
-    @template.content_tag("sl-input", nil, html_attributes)
+    @template.content_tag("sl-input", nil, html_attributes) do
+      if options[:icon].present?
+        @template.content_tag(
+          "sl-icon",
+          nil,
+          {
+            library: "material",
+            name: options.dig(:icon, :name),
+            slot: options.dig(:icon, :position)
+          }
+        )
+      end
+    end
   end
 end

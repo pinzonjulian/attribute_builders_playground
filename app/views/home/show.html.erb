@@ -10,15 +10,16 @@
 
     <p>Head on over to the project in <%= link_to "Github", "https://github.com/pinzonjulian/actionview_attribute_builders" %> to see the code behind the gem and a more detailed technical explanation of the implementation. If you're interested in the context of <em>why</em> this exists, visit the <%= link_to "Exploring Rails Forms", "http://dev.julianpinzon.com/series/exploring-rails-forms" %> series of articles.</p>
     <hr>
-    <p>Each link contains one implementation of the gem for a different component library plus a vanilla implementation of th  Rails default using Tailwind CSS.</p>
+    <p>Each link contains one implementation of the gem for a different component library plus a vanilla implementation of the  Rails default using Tailwind CSS.</p>
     <blockquote>⚠️ This gem is still experimental. This means some things are not finished, polished or may not work entirely</blockquote>
     <h2>The interface</h2>
-    <p>Each implementation has 2 or 3 tabs:</p>
+    <p>Each implementation has 4 tabs:</p>
     <ul>
       <li>A form to interact with</li>
       <li>
-        <span>The code, comprised of:</span>
+        <span>Code and information</span>
         <ul>
+          <li>Information about the implementation and what to look for</li>
           <li>The <code>erb</code> template used to create the form</li>
           <li>The rendered <code>HTML</code> by the server</li>
           <li>The custom <code>FormBuilder</code> used (when applicable)</li>
@@ -27,24 +28,13 @@
       <li>A <code>params</code> section to show the actual parameters the server receives and their shape</li>
     </ul>
 
-    <h2>How to use it and what to look for</h2>
+    <h2>How to use it</h2>
     <blockquote> 👀 Each time you submit a form the <code>HTML</code> tab will change and show the newly rendered markup for the request. Make sure to take a pique!</blockquote>
     <p>There are two scenarios to play with. Invalid forms and valid ones.</p>
     <h3>Invalid forms</h3>
     <p>Simply submit an <strong>empty</strong> form and let Rails do its thing. You should see some change in the presentation of the markup</p>
     <h3>Valid forms</h3>
     <p>Fill in the form with valid fields and click submit. You should see the <code>Params</code> section fill up with the params Rails received</p>
-
-    <details>
-      <summary>
-        👀Here's what to look for exactly
-      </summary>
-      <h4>For the default Rails implementation</h4>
-      <ul>
-        <li>Sending and invalid form does not present errors by default</li>
-        <li>Rails wraps every field and label with a <code>div</code> with a class <code>field_with_errors</code>. This a configuration that comes from <code>ActionView::Base.field_error_proc</code> and can be overwritten if necessary.</li>
-      </ul>
-    </details>
 
     <h2>The <code>User</code>model</h2>
     <p>Use this to figure out how to play with the forms</p>

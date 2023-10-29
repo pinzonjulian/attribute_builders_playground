@@ -4,8 +4,12 @@
        data-tabs-visibility-class="hidden"
        data-tabs-open-class="border-b-stone-400"
        data-tabs-closed-class="border-b-transparent"
-       data-tabs-open-value="code">
+       data-tabs-open-value="info">
     <nav class="flex bg-stone-100 text-stone-700">
+      <button class="px-4 pb-1 pt-3 border-b-transparent border-b-4"
+              data-tabs-target="tab"
+              data-action="tabs#open"
+              data-content="info">Info</button>
       <button class="px-4 pb-1 pt-3 border-b-transparent border-b-4"
               data-tabs-target="tab"
               data-action="tabs#open"
@@ -18,15 +22,11 @@
               data-tabs-target="tab"
               data-action="tabs#open"
               data-content="builder">Builder</button>
-      <button class="px-4 pb-1 pt-3 border-b-transparent border-b-4"
-              data-tabs-target="tab"
-              data-action="tabs#open"
-              data-content="clues">🔎 Clues</button>
     </nav>
+    <div class="hidden" data-tabs-target="content" id="info"><%= render "#{style_type}/info" %></div>
     <div class="hidden" data-tabs-target="content" id="code"><%= render "#{style_type}/code" %></div>
     <div class="hidden" data-tabs-target="content" id="html"><%= render "#{style_type}/html" %></div>
     <div class="hidden" data-tabs-target="content" id="builder"><%= render "#{style_type}/builder" %></div>
-    <div class="hidden" data-tabs-target="content" id="clues"><%= render "#{style_type}/clues" %></div>
   </div>
 
 </div>

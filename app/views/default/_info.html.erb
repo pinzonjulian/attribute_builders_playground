@@ -1,0 +1,11 @@
+<div class="prose p-8">
+  An example of a vanilla Rails form styled with Tailwind CSS classes.
+  <br>
+  <blockquote>👀 This form <strong>does not use</strong> <code>AttributeBuilders</code>.</blockquote>
+  <strong>What to look for:</strong>
+  <ul>
+    <li>Sending and invalid form does not present errors inline by default</li>
+    <li>Submitting an invalid form <strong>causes the layout to shift</strong>. Rails wraps every field and label with a <code>div</code> with a class <code>field_with_errors</code>. This a configuration that comes from <code>ActionView::Base.field_error_proc</code> and can be overwritten if necessary.</li>
+    <li>Different from the web components used throughout this playground, labels and fields are two separate elements.</li>
+  </ul>
+</div>

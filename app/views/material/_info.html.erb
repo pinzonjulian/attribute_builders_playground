@@ -1,0 +1,19 @@
+<div class="prose p-8">
+  An example using a custom <code>FormBuilder</code> that use Material Web Components.
+  <ul>
+    <li>Material Design <%= link_to "website", "http://m3.material.io" %></li>
+    <li>Material Web Components <%= link_to "docs", "https://github.com/material-components/material-web/blob/main/docs/quick-start.md" %></li>
+  </ul>
+  <br>
+  <strong>What to look for:</strong>
+  <ul>
+    <li>The <code>form_with</code> helper uses <code>builder: MaterialFormBuilder</code></li>
+    <li>The <code>MaterialFormBuilder</code> class inherits from <code>ActionView::Helpers::FormBuilder</code> and overwrites a few methods.</li>
+    <li>Different from the default <code>FormBuilder</code> this one provides a <code>switch</code> method to create toggleable switches</li>
+    <li>The options passed to text-based helpers allow for icons to be used and positioned (leading or trailing)</li>
+    <li>Submitting an invalid form presents errors in line with a color conveying the error</li>
+    <li>The error state and messages are part of the spec for the component.</li>
+  </ul>
+  <strong>Other notes</strong>
+  <p>There is a bit of metaprogramming in the <code>MaterialFormBuilder</code> to reduce duplication but it is commented to explain what is going on</p>
+</div>
