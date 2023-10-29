@@ -2,6 +2,7 @@
   <%= turbo_stream.update("json", partial: "general/params") %>
   <%= turbo_stream.replace("user_form", partial: "#{@style_type}/form", locals: { user: User.new }) %>
 <% else %>
+  <%= turbo_stream.update("json", partial: "general/params") %>
   <%= turbo_stream.replace("user_form", partial: "#{@style_type}/form", locals: { user: @user }) %>
   <%= turbo_stream.update("html", partial: "#{@style_type}/html", locals: { user: @user }) %>
 <% end %>
