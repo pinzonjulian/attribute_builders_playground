@@ -41,7 +41,7 @@ class ShoelaceFormBuilder < ApplicationFormBuilder
     html_attributes = attribute_builder.html_attributes
     html_attributes.merge!(**options, label: method)
     if object.errors.where(method).present?
-      html_attributes.merge!("data-invalid": object.invalid?, "help-text" => object.errors.where(method).map(&:full_message))
+      html_attributes.merge!("class": "field-with-error", "help-text" => object.errors.where(method).map(&:full_message))
     end
 
     @template.content_tag("sl-input", nil, html_attributes) do

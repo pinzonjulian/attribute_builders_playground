@@ -62,6 +62,26 @@
     font-size: var(--font-size-4, 1rem);
 }
 
-sl-input[data-invalid]::part(base) {
-    border-color: red;
+/* user invalid styles */
+sl-input.field-with-error::part(base),
+sl-select.field-with-error::part(combobox),
+sl-checkbox.field-with-error::part(control) {
+    border-color: var(--sl-color-danger-600);
+}
+
+.field-with-error::part(form-control-label),
+.field-with-error::part(form-control-help-text),
+.field-with-errorsl-checkbox::part(label) {
+    color: var(--sl-color-danger-700);
+}
+
+sl-checkbox.field-with-error ::part(control) {
+    outline: none;
+}
+
+sl-input.field-with-error:focus-within::part(base),
+sl-select.field-with-error:focus-within::part(combobox),
+sl-checkbox.field-with-error:focus-within::part(control) {
+    border-color: var(--sl-color-danger-600);
+    box-shadow: 0 0 0 var(--sl-focus-ring-width) var(--sl-color-danger-300);
 }
