@@ -40,9 +40,13 @@
     <p>Use this to figure out how to play with the forms</p>
   </div>
   <div class="highlight max-w-[65ch] mx-auto">
-  <pre class="mt-4 p-4">
-    <%== syntax_highlighter(File.read(Rails.root.join("app", "models", "user.rb")), "ruby").html_safe %>
-  </pre>
+    <pre class="mt-4 p-4">
+      <%== syntax_highlighter(File.read(Rails.root.join("app", "models", "user.rb")), "ruby").html_safe %>
+    </pre>
   </div>
-  <div class="prose"></div>
+
+  <div class="prose mt-8 mx-auto">
+    <h2>A note on checkboxes and switches</h2>
+    <p>This playground uses checkboxes and switches because they look nice and fancy (specially in Material design) but they don't behave exactly like a default Rails checkbox would yet. This is because of a browser constraint that Rails accounts for that this implementation does not. I might work on that in the future. Read more <%= link_to "here", "https://edgeguides.rubyonrails.org/form_helpers.html#checkboxes" %> and <%= link_to "here", "https://edgeapi.rubyonrails.org/classes/ActionView/Helpers/FormBuilder.html#method-i-check_box" %> </p>
+  </div>
 </div>
