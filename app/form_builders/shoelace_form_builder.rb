@@ -37,6 +37,7 @@ class ShoelaceFormBuilder < ApplicationFormBuilder
     # e.g. text_field_form_builder(method, options)
     # These methods live in the proposed ActionView::AttributeBuilders gem
     # and are NOT currently part of Rails. This is the actual proposal!
+    icon = options.delete(:icon)
     attribute_builder = public_send("#{method_name}_attribute_builder", method, options)
     html_attributes = attribute_builder.html_attributes
     html_attributes.merge!(**options, label: method)
@@ -45,14 +46,14 @@ class ShoelaceFormBuilder < ApplicationFormBuilder
     end
 
     @template.content_tag("sl-input", nil, html_attributes) do
-      if options[:icon].present?
+      if icon.present?
         @template.content_tag(
           "sl-icon",
           nil,
           {
             library: "material",
-            name: options.dig(:icon, :name),
-            slot: options.dig(:icon, :position)
+            name: icon.fetch(:name),
+            slot: icon.fetch(:position)
           }
         )
       end
