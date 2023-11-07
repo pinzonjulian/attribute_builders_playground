@@ -23,7 +23,7 @@
     <% end %>
     <%= form.label :volume, class: "w-full flex justify-between" do %>
       <span>Preferred volume</span>
-      <%= form.slider :volume, "value-start" => 10, "value-end" => 100 %>
+      <%= form.slider :volume, "value-start" => 10, "value-end" => 100, "labeled"=> true %>
     <% end %>
 
     <%= form.label :preferred_medium_of_transportation %>
