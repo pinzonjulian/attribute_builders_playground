@@ -4,11 +4,11 @@
               id: "user_form" do |form| %>
   <div class="stack">
     <%#= form.text_field :name, required: false, icon: { name: "person", position: "trailing" } %>
-    <%= form.text_field :name, icon: { name: "person", position: "leading" } %>
-    <%= form.number_field :age, icon: { name: "cake", position: "leading" } %>
-    <%= form.email_field :email, icon: { name: "mail", position: "leading" } %>
-    <%= form.password_field :password, icon: { name: "password", position: "leading" } %>
-    <%= form.search_field :search, icon: { name: "search", position: "leading" } %>
+    <%= form.text_field :name, icon: { name: "person", position: "leading" }, "supporting-text" => "* required" %>
+    <%= form.number_field :age, icon: { name: "cake", position: "leading" }, "supporting-text" => "* required" %>
+    <%= form.email_field :email, icon: { name: "mail", position: "leading" }, "supporting-text" => "* required" %>
+    <%= form.password_field :password, icon: { name: "password", position: "leading" }, "supporting-text" => "* required" %>
+    <%= form.search_field :search, icon: { name: "search", position: "leading" }, "supporting-text" => "Weird attribute for a user, huh? Just testing out search fields 😅" %>
 
     <%= form.tel_field :telephone, icon: { name: "smartphone", position: "leading" } %>
     <%= form.url_field :website, icon: { name: "web", position: "leading" } %>
