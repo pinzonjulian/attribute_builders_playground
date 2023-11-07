@@ -3,7 +3,6 @@
               builder: MaterialFormBuilder,
               id: "user_form" do |form| %>
   <div class="stack">
-    <%#= form.text_field :name, required: false, icon: { name: "person", position: "trailing" } %>
     <%= form.text_field :name, icon: { name: "person", position: "leading" }, "supporting-text" => "* required" %>
     <%= form.number_field :age, icon: { name: "cake", position: "leading" }, "supporting-text" => "* required" %>
     <%= form.email_field :email, icon: { name: "mail", position: "leading" }, "supporting-text" => "* required" %>

@@ -3,19 +3,43 @@
               builder: ShoelaceFormBuilder,
               id: "user_form" do |form| %>
   <div class="stack">
-    <%= form.text_field :name, required: false, icon: { name: "person", position: "prefix" } %>
-    <%= form.number_field :age, required: false %>
-    <%= form.email_field :email, required: false %>
-    <%= form.password_field :password, required: false %>
-    <label for="user_active" style="display: flex; justify-content: space-between">
-      Active?
-      <%= form.switch :active %>
-    </label>
+    <%= form.text_field :name, "supporting-text" => "* required" %>
+    <%= form.number_field :age, "supporting-text" => "* required" %>
+    <%= form.email_field :email, "supporting-text" => "* required" %>
+    <%= form.password_field :password, "supporting-text" => "* required" %>
+    <%= form.search_field :search, "supporting-text" => "Weird attribute for a user, huh? Just testing out search fields 😅" %>
 
-    <label for="user_onboarded" style="display: flex; justify-content: space-between">
+    <%= form.tel_field :telephone %>
+    <%= form.url_field :website %>
+
+    <%= form.label :active, class: "w-full flex justify-between" do  %>
+      <span>Active?</span>
+      <%= form.check_box :active %>
+    <% end %>
+    <%= form.label :onboarded, class: "w-full flex justify-between" do %>
       Onboarded?
-      <%= form.check_box :onboarded %>
-    </label>
-    <%= form.button "Submit" %>
+      <%= form.switch :onboarded %>
+    <% end %>
+    <%= form.label :volume, class: "w-full flex justify-between" do %>
+      <span>Preferred volume</span>
+      <%= form.slider :volume, "value-start" => 10, "value-end" => 100, "labeled"=> true %>
+    <% end %>
+
+    <%= form.label :preferred_medium_of_transportation %>
+    <%= form.label :preferred_medium_of_transportation_1, class: "w-full flex items-center gap-4" do %>
+      <%= form.radio_button :preferred_medium_of_transportation, 1 %>
+      <span>Bicycle</span>
+    <% end %>
+    <%= form.label :preferred_medium_of_transportation_2, class: "w-full flex items-center gap-4" do %>
+      <%= form.radio_button :preferred_medium_of_transportation, 2 %>
+      <span>Electric Scooter</span>
+    <% end %>
+    <%= form.label :preferred_medium_of_transportation_3, class: "w-full flex items-center gap-4" do %>
+      <%= form.radio_button :preferred_medium_of_transportation, 3 %>
+      <span>Rollerblades</span>
+    <% end %>
+
+
+    <%= form.button %>
   </div>
 <% end %>
