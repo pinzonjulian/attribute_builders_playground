@@ -67,7 +67,7 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "actionview_attribute_builders"
+gem "actionview_attribute_builders", "0.1.3"
 gem "tailwindcss-rails", "~> 2.0"
 
 gem "rouge", "~> 4.1"

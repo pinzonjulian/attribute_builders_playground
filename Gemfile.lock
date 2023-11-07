@@ -49,7 +49,7 @@ GEM
       erubi (~> 1.11)
       rails-dom-testing (~> 2.2)
       rails-html-sanitizer (~> 1.6)
-    actionview_attribute_builders (0.1.0)
+    actionview_attribute_builders (0.1.3)
       rails (>= 7.1.1)
     activejob (7.1.1)
       activesupport (= 7.1.1)
@@ -144,6 +144,8 @@ GEM
       racc (~> 1.4)
     nokogiri (1.15.4-arm64-darwin)
       racc (~> 1.4)
+    nokogiri (1.15.4-x86_64-darwin)
+      racc (~> 1.4)
     nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
     psych (5.1.1.1)
@@ -216,6 +218,7 @@ GEM
       sprockets (>= 3.0.0)
     sqlite3 (1.6.7-aarch64-linux)
     sqlite3 (1.6.7-arm64-darwin)
+    sqlite3 (1.6.7-x86_64-darwin)
     sqlite3 (1.6.7-x86_64-linux)
     stimulus-rails (1.3.0)
       railties (>= 6.0.0)
@@ -223,6 +226,8 @@ GEM
     tailwindcss-rails (2.0.31-aarch64-linux)
       railties (>= 6.0.0)
     tailwindcss-rails (2.0.31-arm64-darwin)
+      railties (>= 6.0.0)
+    tailwindcss-rails (2.0.31-x86_64-darwin)
       railties (>= 6.0.0)
     tailwindcss-rails (2.0.31-x86_64-linux)
       railties (>= 6.0.0)
@@ -251,10 +256,11 @@ GEM
 PLATFORMS
   aarch64-linux
   arm64-darwin-23
+  x86_64-darwin-23
   x86_64-linux
 
 DEPENDENCIES
-  actionview_attribute_builders
+  actionview_attribute_builders (= 0.1.3)
   bootsnap
   capybara
   debug
