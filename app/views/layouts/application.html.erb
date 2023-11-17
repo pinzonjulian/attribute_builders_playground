@@ -31,8 +31,8 @@
                         '/default',
                         class: class_names(
                           'border-b-2', 'border-b-transparent', 'pb-1',
-                          'hover:text-teal-200 hover:border-b-teal-300' => !current_page?("default"),
-                          'text-teal-400 border-b-teal-400' => current_page?("default")) %></li>
+                          'hover:text-teal-200 hover:border-b-teal-300' => !request.fullpath.include?("default"),
+                          'text-teal-400 border-b-teal-400' => request.fullpath.include?("default")) %></li>
         <li><%= link_to "Material",
                         '/material',
                         class: class_names(
@@ -45,6 +45,12 @@
                           'border-b-2', 'border-b-transparent', 'pb-1',
                           'hover:text-teal-200 hover:border-b-teal-300' => !request.fullpath.include?("shoelace"),
                           'text-teal-400 border-b-teal-400' => request.fullpath.include?("shoelace")) %></li>
+        <li><%= link_to "View Component",
+                        '/view_component',
+                        class: class_names(
+                          'border-b-2', 'border-b-transparent', 'pb-1',
+                          'hover:text-teal-200 hover:border-b-teal-300' => !request.fullpath.include?("view_component"),
+                          'text-teal-400 border-b-teal-400' => request.fullpath.include?("view_component")) %></li>
       </ul>
     </nav>
   </div>

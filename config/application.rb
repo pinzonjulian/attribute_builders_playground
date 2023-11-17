@@ -23,5 +23,6 @@ module FutureLooks
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    # config.view_component.capture_compatibility_patch_enabled = true
   end
 end

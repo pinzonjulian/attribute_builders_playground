@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   get 'shoelace', to: "shoelace#show"
   get 'material', to: "material#show"
   get 'default', to: "default#show"
+  get 'view_component', to: "view_component#show"
 end
